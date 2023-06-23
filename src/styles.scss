@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import './app/theme';
+
+html {
+    width: 100vw;
+}
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
+
+//Bootstrap Overrides
+.nav {
+    &-link {
+        color: $cWhite !important;
+        background-color: none !important;
+        ::after {
+            display:block;
+            content: '';
+            border-bottom: solid 3px #019fb6;  
+            transform: scaleX(0);  
+            transition: transform 250ms ease-in-out;
+        }
+        ::hover {
+            ::after {
+                transform: scaleX(1); 
+            }
+        }
+            
+    }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(32%) sepia(93%) saturate(4767%) hue-rotate(346deg) brightness(85%) contrast(95%);
+    opacity: 1;
+}

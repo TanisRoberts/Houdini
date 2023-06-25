@@ -1,11 +1,13 @@
-<ngb-carousel *ngIf="testimonials">
-	<ng-template ngbSlide *ngFor="let t of testimonials">
+<ngb-carousel *ngIf="data">
+	<ng-template ngbSlide *ngFor="let t of data">
     <div class="wrapper">
       <div class="card">
         <div class="card-info">
           <img class="card-img-top" src="{{t.image}}" alt="">
-          <h4>{{t.name}}</h4>
-          <h5>{{t.jobTitle}}</h5>
+          <div class="card-info-text">
+            <h4>{{t.name}}</h4>
+            <h5>{{t.jobTitle}}</h5>
+          </div>
           <a href="{{t.companyUrl ?? ''}}">{{t.companyName ?? ""}}</a>
         </div>
         <div class="card-quote">

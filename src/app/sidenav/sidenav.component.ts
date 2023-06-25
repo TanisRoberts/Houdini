@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-sidenav',
+  standalone: true,
+	imports: [NgFor],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })

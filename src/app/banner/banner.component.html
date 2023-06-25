@@ -1,6 +1,19 @@
+<ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 <div class="banner-wrapper">
-    <h1 class="banner-title {{data.isHero ? 'title' : ''}}">{{data.title}}</h1>
-    <h4 class="banner-subtitle">{{data.subtitle}}</h4>
-    <h5 class="banner-text">{{data.text}}</h5>
-    <div *ngFor="let x of array">{{x}}</div>
+    <h1 class="banner-title {{data.isHero ? 'hero' : ''}}">{{data.title}}</h1>
+    <div class="banner-copy">
+        <h4 class="banner-subtitle">{{data.subtitle}}</h4>
+        <h5 class="banner-text">{{data.text}}</h5>
+    </div>
 </div>

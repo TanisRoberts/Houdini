@@ -6,15 +6,29 @@
 
 $cPrimary: #003049;
 $cSecondary: #d62828;
+$cSecondaryFilter: invert(28%) sepia(77%) saturate(1757%) hue-rotate(336deg) brightness(85%) contrast(111%);
 $cTert1: #f77f00;
+$cTert1Filter: invert(54%) sepia(19%) saturate(7465%) hue-rotate(5deg) brightness(101%) contrast(102%);
 $cTert2: #fcbf49;
+$cTert2Filter: invert(87%) sepia(50%) saturate(1162%) hue-rotate(320deg) brightness(101%) contrast(98%);
 $cTert3: #eae2b7;
+$cTert3Filter: invert(94%) sepia(9%) saturate(780%) hue-rotate(4deg) brightness(97%) contrast(91%);
+$cTert4: #0E6CAB;
 
 $cWhite: #fff;
 
-$cBackground: $cTert2;
+$cBackground: $cTert3;
 $cTextLight: $cTert3;
 $cTextDark: $cPrimary;
+$cTextAccent: $cTert1;
 $cShadow: $cPrimary;
-$cLinkDefault: $cTert1;
+$cLinkDefault: $cTert2;
 $cLinkHover: $cSecondary; 
+
+$navWidth: 15rem;
+
+$base-font-size: 1rem;
+$base-line-height: 1.6;
+$leading: $base-font-size * $base-line-height;
+
+$warningBannerHeight: 3rem;

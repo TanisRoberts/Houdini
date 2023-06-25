@@ -3,37 +3,72 @@
 @import './app/theme';
 
 html {
-    width: 100vw;
+    width: 100%;
+    font-size: 16px;
+    @media (-webkit-min-device-pixel-ratio: 2) {
+        font-size: 8px;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 body {
     padding: 0;
     margin: 0;
-    width: 100vw;
+    width: 100%;
 }
 
-//Bootstrap Overrides
-.nav {
-    &-link {
-        color: $cWhite !important;
-        background-color: none !important;
-        ::after {
-            display:block;
-            content: '';
-            border-bottom: solid 3px #019fb6;  
-            transform: scaleX(0);  
-            transition: transform 250ms ease-in-out;
-        }
-        ::hover {
-            ::after {
-                transform: scaleX(1); 
-            }
-        }
-            
+span.divider {
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background-color: $cPrimary;
+    line-height: 0;
+}
+
+.gutters {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+    @media only screen and (max-width: 600px) {
+        max-width: 250px;
+      }
+}
+
+.spacing {
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+}
+
+.corner{
+    &-orange {
+        background: linear-gradient(45deg, $cTert1 3rem, transparent 3.01rem);
+    }
+    &-primary {
+        background: linear-gradient(45deg, $cPrimary 3rem, transparent 3.01rem);
+    }
+    &-base {
+        background: linear-gradient(45deg, $cBackground 3rem, transparent 3.01rem);
+    }
+    &-tert4 {
+        background: linear-gradient(45deg, $cTert4 3rem, transparent 3.01rem);
     }
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(32%) sepia(93%) saturate(4767%) hue-rotate(346deg) brightness(85%) contrast(95%);
-    opacity: 1;
+.responsiveWarning {
+    display: none;
+    @media only screen and (max-width: 1300px) {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 0.75rem 0;
+        height: $warningBannerHeight;
+        background-color: $cSecondary;
+        color: $cTert3;
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
 }
+//Bootstrap Overrides

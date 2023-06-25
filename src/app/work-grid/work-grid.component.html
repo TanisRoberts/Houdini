@@ -1,0 +1,13 @@
+<div class="workgrid gutters">
+  <div class="workgrid-title">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="workgrid-grid">
+    <app-work-card *ngFor="let w of work"
+      name={{w.name}}
+      image={{w.image}}
+      url={{w.url}}
+      background={{w.background}}
+    />
+  </div>
+</div>

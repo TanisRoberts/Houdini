@@ -1,0 +1,30 @@
+<div class="content gutters spacing">
+  <h1 class="content-title">{{data.title}}</h1>
+  <div class="content-sections">
+    <div class="content-section" *ngFor="let section of data.sections">
+      <div class="content-section-title">
+        <a href={{section.url}} target="_blank">
+          <h2 class="content-section-location">{{section.location}}</h2>
+        </a>
+        <h3 class="content-section-years">{{section.years}}</h3>
+      </div>
+      <div class="content-section-roles" >
+        <div class="content-role" *ngFor="let role of section.roles">
+          <div class="content-role-info">
+            <h4 class="content-role-title">{{role.title}}</h4>
+            <h5 class="content-role-time" *ngIf="role.time">{{role.time}}</h5>
+            <h4 class="content-role-grade" *ngIf="role.grade">{{role.grade}}</h4>
+          </div>
+          <ul class="content-role-responsibilities">
+            <li class="content-role-responsibility" *ngFor="let responsibility of role.responsibilities" innerHtml={{responsibility}}>
+              {{responsibility}}
+            </li>
+          </ul>
+        </div>
+        <div class="content-section-technologies">
+          <h6 class="content-section-technology" *ngFor="let technology of section.technologies">{{technology}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

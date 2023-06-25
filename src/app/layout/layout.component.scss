@@ -2,11 +2,12 @@
 $wrapperWidth: 90%;
 
 :host {
+    position: absolute;
+    right: $navWidth;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: calc(100% - $navWidth);
     background-color: $cBackground;
-    margin-right: 15vw;
     .layout {
         // &-wrapper {
         //     width: $wrapperWidth;

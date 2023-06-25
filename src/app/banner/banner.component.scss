@@ -2,17 +2,140 @@
 
 :host {
     display: flex;
-    background-color: $cPrimary;
+    background: linear-gradient(45deg, $cTert3 3rem, $cPrimary 3.01rem);
     color: $cTextLight;
     height: 100vh;
+    position: relative;
+    @media only screen and (max-width: 600px) {
+        height: calc(100vh - $warningBannerHeight);
+    }
+    :before {
+        content: '';
+    }
     .banner {
         &-wrapper {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             gap: 1rem;
             width: 85%;
             height: 85%;
             margin: auto;
         }
+        &-title {
+            z-index: 10;
+        }
+        &-copy {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 60%;
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .circles{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        & li{
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: $cTert3;
+            animation: animate 25s linear infinite;
+            top: -150px;
+            &:nth-child(1){
+                left: 14%;
+                width: 2.4rem;
+                height: 2.4rem;
+                animation-delay: 0s;
+            }
+            &:nth-child(2){
+                left: 6%;
+                width: 3.76rem;
+                height: 3.76rem;
+                animation-delay: 2s;
+                animation-duration: 12s;
+            }
+            &:nth-child(3){
+                left: 69%;
+                width: 2.15rem;
+                height: 2.15rem;
+                animation-delay: 4s;
+            }
+            &:nth-child(4){
+                left: 98%;
+                width: 1.17rem;
+                height: 1.17rem;
+                animation-delay: 0s;
+                animation-duration: 18s;
+            }
+            &:nth-child(5){
+                left: 78%;
+                width: 2.13rem;
+                height: 2.13rem;
+                animation-delay: 0s;
+            }
+            &:nth-child(6){
+                left: 43%;
+                width: 1.77rem;
+                height: 1.77rem;
+                animation-delay: 3s;
+            }
+            &:nth-child(7){
+                left: 28%;
+                width: 2.24rem;
+                height: 2.24rem;
+                animation-delay: 7s;
+            }
+            &:nth-child(8){
+                left: 60%;
+                width: 1.33rem;
+                height: 1.33rem;
+                animation-delay: 15s;
+                animation-duration: 45s;
+            }
+            &:nth-child(9){
+                left: 46%;
+                width: 3.23rem;
+                height: 3.23rem;
+                animation-delay: 2s;
+                animation-duration: 35s;
+            }
+            &:nth-child(10){
+                left: 79%;
+                width: 2.07rem;
+                height: 2.07rem;
+                animation-delay: 0s;
+                animation-duration: 11s;
+            }
+        }
+    }
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    25%{
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(1000px) rotate(720deg) scale(0);
+        opacity: 0;
     }
 }

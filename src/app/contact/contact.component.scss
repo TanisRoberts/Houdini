@@ -1,0 +1,64 @@
+@import '../theme';
+
+section#contact {
+  background-color: $cPrimary;
+}
+
+:host {
+  display: block;
+  height: fit-content;
+  color: $cTextLight;
+  background-color: $cPrimary;
+  .contact {
+    background-color: $cPrimary;
+    &-title {
+      color: $cTextLight;
+    }
+    &-layout {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+      @media only screen and (max-width: 600px) {
+        flex-direction: column-reverse;
+      }
+    }
+    &-form {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+    &-links {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &-link {
+      &-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        width: fit-content;
+        color: $cTextLight;
+        font-weight: bolder;
+        padding-bottom: 0.25rem;
+        padding-right: 0.5rem;
+      }
+      &:after {
+        border-color: $cLinkHover;
+      }
+      &:hover {
+        .contact-link-wrapper {
+          color: $cLinkHover;
+        }
+        &:after {
+          border-color: $cLinkHover;
+        }
+      }
+    }
+  }
+}

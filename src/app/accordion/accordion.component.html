@@ -1,0 +1,20 @@
+<div class="traccordion gutters spacing">
+  <h1 class="traccordion-title">{{data.title}}</h1>
+  <div class="traccordion-main" ngbAccordion [closeOthers]="data.closeOthers">
+    <div class="traccordion-main-item" ngbAccordionItem *ngFor="let item of data.items">
+      <div class="traccordion-main-header" ngbAccordionHeader *ngIf="item.name">
+        <button ngbAccordionButton><h4>{{item.name}}</h4></button>
+      </div>
+      <div class="traccordion-main-collapse" ngbAccordionCollapse>
+        <div class="traccordion-main-wrapper">
+          <div class="traccordion-main-image" *ngIf="item.image">
+            <img [src]="item.image" />
+          </div>
+          <div class="traccordion-main-body" ngbAccordionBody [innerHtml]="item.body">
+            {{item.body}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,56 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Nabla&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import './variables.scss';
 
 body {
     font-family: Quicksand;
+    color: $cTextDark;
 }
 
 h1 {
     font-weight: bold;
-    &.title {
-        font-family: Nabla;
-        font-weight: normal;
-        text-transform: uppercase;
-        letter-spacing: 0.5rem;
-        font-size: 10rem;
+    font-size: 3rem;
+    color: $cTextDark;
+    padding-top: #{3 * $leading};
+    margin-bottom: #{1.5 * $leading};
+    line-height: #{2.5 * $leading};
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    &.hero {
+      font-family: Nabla;
+      font-weight: normal;
+      letter-spacing: 0.5rem;
+      line-height: 11rem;
+      font-size: 10rem;
+      @media only screen and (max-width: 600px) {
+        font-size: 7rem;
+      }
     }
-}
+  }
 
-h2 {
-
+  h2 {
+  color: $cTextAccent;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 h3 {
-
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 h4 {
-
+  font-size: 1.625rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem;
+  @media only screen and (max-width: 600px) {
+    line-height: 2rem;
+  }
 }
 
 h5 {
+  font-size: 1.125rem;
+  opacity: 0.8;
+  font-style: italic;
+}
 
+h6 {
+  font-size: 1rem;
+  font-weight: bolder;
 }
 
 a {
-    color: $cLinkDefault;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.25rem;
+  color: $cLinkDefault;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  width: fit-content;
+  &:after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px $cLinkHover;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: bottom right;
+  }
+
+  &:hover,
+  &.active {
+    color: $cLinkHover;
     &:after {
-        display:block;
-        content: '';
-        border-bottom: solid 3px $cLinkHover;  
-        transform: scaleX(0);  
-        transition: transform 250ms ease-in-out;
-      }
-    &:hover {
-        color: $cLinkHover;
-        &:after {
-            transform: scaleX(1);
-        }
+      transform-origin: bottom center;
+      transform: scaleX(1);
     }
+  }
+
+  &.active:after {
+    transform-origin: bottom left;
+  }
 }
 
 p {
-    color: $cPrimary;
+  color: $cTextDark;
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
+
+blockquote {
+  font-size: 1.25rem;
+  color: $cTextDark;
+}
+
+li {
+  font-size: 1rem;
+  font-weight: 600;
 }

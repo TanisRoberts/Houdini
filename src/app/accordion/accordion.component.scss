@@ -1,0 +1,61 @@
+@import '../theme';
+
+:host {
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &-item {
+      background: none;
+      border: unset;
+    }
+    &-button{
+      box-shadow: unset;
+      border-radius: 0 !important;
+      color: $cLinkDefault;
+      background-color: $cPrimary;
+      &:after {
+        filter: $cTert2Filter;
+      }
+      &.collapsed {
+        color: $cTextLight;
+        &:after {
+          filter: $cTert3Filter;
+        }
+      }
+    
+      &:hover{
+        color: $cTextAccent;
+        &:after {
+          filter: $cTert1Filter;
+        }
+      }
+    }
+  }
+
+  .traccordion {
+    &-main {
+      &-wrapper{
+        display: flex;
+        flex-direction: row;
+        padding: 2rem 1rem;
+        gap: 2rem;
+      }
+      &-image {
+        flex: 1;
+        border-radius: 2rem;
+        border: 0.25rem solid $cWhite;
+        overflow: hidden;
+        height: fit-content;
+        img {
+          width: 100%;
+        }
+      }
+      &-body {
+        flex: 2;
+        font-size: 1.25rem;
+        padding: 0;
+      }
+    }
+  }
+}

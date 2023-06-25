@@ -1,0 +1,80 @@
+@import '../theme';
+
+:host {
+  .content {
+    &-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 7.5rem;
+    }
+    &-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      @media only screen and (max-width: 600px) {
+        &-years {
+          flex: 1;
+        }
+      }
+      &-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        > a {
+          @media only screen and (max-width: 600px) {
+            flex: 2;
+          }
+          &:hover {
+            .content-section-location {
+              color: $cLinkHover;
+            }
+          }
+        }
+      }
+      &-years {
+        background-color: $cTextAccent;
+        color: $cBackground;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        @media only screen and (max-width: 600px) {
+          flex: 1;
+          padding-bottom: 2rem;
+        }
+      }
+      &-roles {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      &-technologies {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.25rem;
+        > * {
+          border-left: 1px solid $cTextDark;
+          padding-left: 1.25rem;
+          @media only screen and (max-width: 600px) {
+            border: none;
+            padding: 0;
+          }
+        }
+        & :first-child {
+          border: none;
+        }
+        @media only screen and (max-width: 600px) {
+          flex-wrap: wrap;
+        }
+      }
+    }
+    &-role {
+      &-grade {
+        color: $cTextAccent;
+        opacity: 0.8;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}

@@ -1,7 +1,12 @@
 <div class="layout-wrapper">
-  <app-banner 
-    [data]="data.banner"
-  />
-  <app-testimonials />
-  <!-- <ngbd-carousel-basic></ngbd-carousel-basic> -->
+  <div class="responsiveWarning">I didn't have time to make this page responsive, sorry!</div>
+  <section id="top"><app-banner [data]="data.banner" /></section>
+  <section id="experience" class="corner-orange"><app-content [data]="data.experience" /></section>
+  <section id="work"><app-work-grid/></section>
+  <section id="education" class="corner-tert4"><app-content [data]="data.education"/></section>
+  <section id="testimonials"><app-testimonials [data]="data.testimonials" /></section>
+  <section id="projects"><app-accordion [data]="data.projects" /></section>
+  <section id="passions" class="corner-primary"><app-accordion [data]="data.passions" /></section>
+  <section id="contact"><app-contact [data]="data.contact" /></section>
+  <!-- <section id="typography"><app-typography-test /></section> -->
 </div>
